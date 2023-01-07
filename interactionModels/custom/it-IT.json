@@ -1,0 +1,84 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "chat da vinci",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "ChatIntent",
+          "slots": [
+            {
+              "name": "richiesta",
+              "type": "AMAZON.Color",
+              "samples": [
+                "giallo"
+              ]
+            }
+          ],
+          "samples": [
+            "{richiesta}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ChatIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "richiesta",
+              "type": "AMAZON.Color",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1146673831180.339647004218"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.483451084582",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sicuro?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1146673831180.339647004218",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cosa vuoi chiedere?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "5"
+}
